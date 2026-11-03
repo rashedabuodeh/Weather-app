@@ -65,6 +65,79 @@ Get forecasts for your current location or any city you save, explore hourly and
 | **Firebase Cloud Functions** | Scheduled server-side weather alert checks |
 | **Local device storage** | Saved cities and a local copy of synced data |
 
+
+## 🧪 Testing & Code Quality
+
+This application includes automated unit and hook tests
+using Jest and React Native Testing Library.
+
+### Test Coverage
+
+| Module | Tests |
+| --- | --- |
+| Weather API | API requests, response mapping, network errors |
+| Geocoding | City search, location mapping, error handling |
+| Forecast Utilities | Hourly and daily forecasts, time zones, temperature ranges |
+| useForecast Hook | Loading, refreshing, retrying, error states |
+
+Tests use mocked network responses to verify application
+behavior without relying on external weather services.
+
+### Run Tests
+
+Install project dependencies:
+
+```bash id="yk0cba"
+npm install
+```
+
+Run all tests:
+
+```bash id="aq8wwj"
+npm test
+```
+
+Run tests in watch mode:
+
+```bash id="g3kqqp"
+npm run test:watch
+```
+
+Generate a coverage report:
+
+```bash id="62w02p"
+npm run test:coverage
+```
+
+Check TypeScript:
+
+```bash id="92hx3s"
+npm run typecheck
+```
+
+### Continuous Integration
+
+The project uses GitHub Actions to automatically:
+
+1. Install application dependencies.
+2. Validate TypeScript.
+3. Execute Jest tests.
+
+The workflow runs when code is pushed to `main` or
+a pull request targeting `main` is created.
+
+### Test Coverage Report
+
+After running the coverage command, the HTML report
+is generated at:
+
+`coverage/lcov-report/index.html`
+
+Coverage is scoped to the Weather API, Geocoding,
+Forecast Utilities, and useForecast hook.
+It does not represent full application coverage.
+
+
 ## ⚙️ How It Works
 
 ### 1. Forecast data
