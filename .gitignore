@@ -42,3 +42,6 @@ yarn-error.*
 /.claude
 CLAUDE.md
 google-services.json
+
+# Jest coverage output
+coverage/
